@@ -36,6 +36,7 @@ app.get("/register", function (req, res) {
 }); //handle sign up logic
 
 app.post("/register", function (req, res) {
+  console.log("regiseter :" + req.body);
   var newUser = new User({
     username: req.body.username,
     email: req.bosy.email

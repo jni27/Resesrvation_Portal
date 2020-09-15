@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+
+<div class="col-md-9">
+    <div class="thumbnail">
+        <div class="caption-full">
+            <h4><a><%=customer.name%></a></h4>
+            <p><%= customer.portal %></p>
+            <p><%= customer.contact %></p>
+            <p><%= customer.date %></p>
+            <p><%= customer.time %></p>
+            <a class="btn btn-md btn-secondary" href="/reservation/<%= customer._id %>/edit">Edit</a>
+                <form action="/reservation/<%= customer._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-md btn-danger">Delete</button>
+                </form>
+        </div>
+    </div>
+</div>

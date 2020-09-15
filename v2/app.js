@@ -39,6 +39,7 @@ var express       =   require("express"),
     });
     //handle sign up logic
     app.post("/register", function(req,res){
+        console.log("regiseter :"+ req.body)
         var newUser = new User({username: req.body.username, email: req.bosy.email});
         User.register(newUser, req.body.password, function(err, user){
             if(err){
