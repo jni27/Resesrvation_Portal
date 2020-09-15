@@ -61,7 +61,7 @@ router.get("/:id", function (req, res) {
       console.log(err);
     } else {
       console.log(foundCustomer);
-      res.render("reservation/show", {
+      res.render("show", {
         customer: foundCustomer
       });
     }
@@ -79,7 +79,13 @@ router.get("/:id/edit", function (req, res) {
 
 router.put("/:id", function (req, res) {
   //find and update the correct reservation
-  Customer.findByIdAndUpdate(req.params.id, req.params.customer, function (err, updatedCustomer) {});
+  Customer.findByIdAndUpdate(req.params.id, req.params.customer, function (err, updatedCustomer) {
+    if (err) {
+      res.redirect("/reservation");
+    } else {
+      res.redirect("/reservation/" + req.params._id);
+    }
+  });
 }); //DELETE Reservation
 
 router["delete"]("/:id", function (req, res) {
@@ -87,7 +93,7 @@ router["delete"]("/:id", function (req, res) {
     if (err) {
       res.redirect("/reservation");
     } else {
-      res.redirect("/reservation/show");
+      res.redirect("/reservation");
     }
   });
 });

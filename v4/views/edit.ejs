@@ -4,14 +4,14 @@
     <h1 style= "text-align: center;">Edit Reservation</h1>
   <div class= "row">
         <div style="width: 30%; margin: 25px auto;">
-            <form action="/reservation/?_method=PUT" method= "POST">
+            <form action="/reservation/<%=customer._id%>?_method=PUT" method= "POST">
                 <div class= "form-group">
                     <label for="Name">Full Name</label>
-                    <input class= "form-control" type="text"  name="name" value= "">
+                    <input class= "form-control" type="text"  name="name" value= "<%=customer.name%>">
                 </div>
                 <div class= "form-group">
                     <label for="Portal">Book for:</label>
-                    <select name= "portal" value= "">
+                    <select name= "portal" value= "<%=customer.portal%>">
                         <option>Restaurant</option>
                         <option>Saloon</option>
                         <option>Spa</option>
@@ -20,12 +20,12 @@
     
                 <div class= "form-group">
                     <label for="Date">Date:</label>
-                    <input class= "form-control" type="date"  name="date"  value= "">
+                    <input class= "form-control" type="date"  name="date"  value= "<%=customer.date%>">
                 </div>
                 
                 <div class= "form-group">
                     <label for="Time">Time:</label>
-                    <input class= "form-control" type="time"  name="time" value= "">
+                    <input class= "form-control" type="time"  name="time" value= "<%=customer.time%>">
                 </div>
                 
                 <div class ="form-group">
